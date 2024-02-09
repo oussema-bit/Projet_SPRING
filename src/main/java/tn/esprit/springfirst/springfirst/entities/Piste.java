@@ -5,9 +5,12 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 @Entity
-@Table(name = "TPiste")
+
 public class Piste implements Serializable {
 
     @Setter
@@ -28,6 +31,9 @@ public class Piste implements Serializable {
     @Column(name = "slope")
 
     private int slope;
+
+    @ManyToMany(mappedBy = "pistes")
+    private Set<Skier> skiers;
 
 
 }
